@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Coach Production Health Check Suite" preserve-order="true" parallel="classes" thread-count="1">
+    <test name="Coach Production Health Check Suite - DE - Desktop">
+        <parameter name="locale" value="DE"/>
+        <groups>
+            <run>
+                <include name="desktop"></include>
+            </run>
+        </groups>           
+        <classes>            
+            <!-- Region and Viewport neutral tests (Common tests) -->
+           <class name="com.coach.tests.regions.viewports.VerifyPLPImagesForAllCategories" />                   
+         
+        </classes>
+    </test>
+</suite>

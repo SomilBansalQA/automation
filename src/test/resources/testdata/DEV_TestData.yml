@@ -1,0 +1,58 @@
+ProjectName: Coach
+base_url: https://storefront:coach123@dwdevelopment.coach.com
+base_uk_url: http://uk-dwdevelopment.coach.com/
+card_1: 3095000000000034
+master_card_no: 5555555555554444
+product: LUGGAGE TAG
+product_simple: Leather Cleaner
+product_size: men's shoes
+gift_card_no: 7777016099446468
+gift_card_pin: 89974115
+gift_card_no1: 7777016099438012
+gift_card_pin1: 19205835
+gift_card_no2: 7777016099427163
+gift_card_pin2: 10019610
+email_paypal: sittesting1@hotmail.com
+password_pay_pal: coach450
+fname: John
+lname: Doe
+address: Street no 8
+zipcode: 10001
+canada_zipcode: M5P 2N7
+country_US: United States
+country_canada: Canada
+country_uk: United Kindom
+phone_no: 8750079543
+
+zipcode_uk: W11 2BQ
+
+card_uk_visa: 4444333322221111
+csv_uk: 555
+ 
+users:
+  user1:
+    username: testautomation@qa.com
+    password: Qait@1234 	
+
+test_data_mode: wiki-page                                                                                         
+test_data_pages:                                                      
+    d1: "77399453"
+    d2: "77399488"                                                      
+    US: "77399453"
+    UK: "77399488"
+    FR: "78480045"
+    IT: "78480173" 
+    ES: "78480230"
+    DE: "78480305"                                
+    categoriesAndItems: "77398378"
+
+# credentials
+wiki_url: https://confluence.coach.com
+wiki_username: aBagga
+wiki_password: Qait@123
+
+
+# Demandware API
+api_url: http://uk-dwdevelopment.coach.com/
+api_client_id: 1c9f188b-df29-46a4-a5f1-d0c67fd606b2
+api_version: v16_5

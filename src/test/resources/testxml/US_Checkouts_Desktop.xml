@@ -1,0 +1,45 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Coach Automation Regression Tests Suite" preserve-order="true" parallel="classes" thread-count="1">
+    <test name="US-Checkouts-Desktop">
+        <parameter name="locale" value="US"/>
+        <groups>
+            <run>
+                <include name="desktop"></include>
+            </run>
+        </groups>           
+        <classes>    
+                  <class name="com.coach.tests.regions.us.viewports.desktop.TestCase31_VerifyGuestUserIsAbleToShopAndCheckoutUsingCreditcard"/>
+                  <class name="com.coach.tests.regions.us.viewports.desktop.TestCase32_VerifyRegisterUserIsAbleToShopAndCheckoutUsingExpressPaypal"/>
+                  <class name="com.coach.tests.regions.us.viewports.desktop.Verify_GuestUserCanCheckoutUsingGiftCardAndCreditCard"/>
+                  <class name="com.coach.tests.regions.us.viewports.desktop.Verify_RegisteredUserCanCheckoutUsingGiftCardAndPayPal"/>
+                  <class name="com.coach.tests.regions.us.viewports.desktop.TestCase31_VerifyGuestUserIsAbleToShopAndCheckoutUsingExpressPaypal"/>
+                  <class name="com.coach.tests.regions.us.viewports.desktop.TestCase46_PurchasedGiftCardsUsingVisaCard"/>
+                  <class name="com.coach.tests.regions.us.viewports.desktop.TestCase47_PurchasedGiftCardsUsingCreditCard"/>
+                  <class name="com.coach.tests.regions.us.viewports.desktop.Verify_RegisteredUserCanCheckoutUsingGiftCardAndCreditCard"/>
+                  <class name="com.coach.tests.regions.us.viewports.desktop.Verify_RegisteredUserCanCheckoutUsingGiftCardAndPayPal"/>
+                  <class name="com.coach.tests.regions.us.viewports.desktop.Verify_RegisteredUserCanCheckoutWith_2GiftCard_1CreditCard"/>
+                  <class name="com.coach.tests.regions.us.viewports.desktop.VerifyRegisterUserIsAbleToShopAndCheckoutUsingPaypal"/>
+                  <class name="com.coach.tests.regions.us.viewports.desktop.Verify_GuestUserCanCheckoutUsingGiftCardAndCreditCard"/>
+                  <class name="com.coach.tests.regions.us.viewports.desktop.Verify_GuestUserCanCheckoutUsingGiftCardAndCreditCard"/>
+                  <class name="com.coach.tests.regions.us.viewports.desktop.Verify_GuestUserCanCheckoutUsingGiftCardAndPayPal"/>
+                  <class name="com.coach.tests.regions.us.viewports.desktop.Verify_RegisteredUserCanCheckoutUsingSavedDISCOVER_CreditCard"/> 
+                  
+                  
+                  <class name="com.coach.tests.regions.us.viewports.desktop.VerifiShippingToCanadaForGuestUser"/>
+                  <class name="com.coach.tests.regions.us.viewports.TestCase17_VerifyGuestUserIsAbleToShopAndCheckoutUsingPaypal"/>
+                  <class name="com.coach.tests.regions.us.viewports.TestCase10_VerifyGuestUserIsAbleToShopAndCheckoutUsingGiftCards"/>
+                  <class name="com.coach.tests.regions.us.viewports.TestCase23_VerifyRegisterUserIsAbleToShopAndCheckoutUsingCoachGiftCard"/>
+                  <class name="com.coach.tests.regions.us.viewports.TestCase45_49VerifyCanadaGuestUserQuickShop"/>
+                  <class name="com.coach.tests.regions.us.viewports.TestCase50_RegisterUserExpressCheckoutUsingSavedCardDetails"/>
+                 
+                  <class name="com.coach.tests.regions.viewports.TestCase24_25_26_27_28_29VerifyRegisterUserIsAbleToShopAndCheckOutUsingCreditCards"/>
+
+                  <class name="com.coach.tests.regions.viewports.desktop.TestCase11_12_13_14_15_And_16_VerifyGuestUserIsAbleToShopAndCheckoutUsingCards"/>
+                  <class name="com.coach.tests.regions.viewports.desktop.TestCase30_VerifyRegisterUserIsAbleToShopAndCheckOutUsingCreditCard"/>
+                  
+            
+        </classes>
+         
+         
+    </test>
+</suite>

@@ -1,0 +1,32 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Coach Automation Regression Tests Suite" preserve-order="true" parallel="classes" thread-count="1">
+    <test name="Full Regression Test - IT - Mobile">
+        <parameter name="locale" value="IT"/>
+        <groups>
+            <run>
+                <include name="mobile"></include>
+            </run>
+        </groups>           
+        <classes>            
+            <!-- Region and Viewport neutral tests (Common tests) -->
+                <class name="com.coach.tests.regions.viewports.TestCase06_08_09And43_VerifyUserAddProductToBagAndRemoveProductFromBag" />
+                 <class name="com.coach.tests.regions.viewports.TestCase11_12_13_14_15_And_16_VerifyGuestUserIsAbleToShopAndCheckoutUsingCards"/>
+                 <class name="com.coach.tests.regions.viewports.TestCase20_VerifyTopScrollupbutton"/>
+                 <class name="com.coach.tests.regions.viewports.TestCase21_34_35_36And38_VerifyUserIsAbleToCheckProductResultAndProductDetailPage"/>
+<!--             <class name="com.coach.tests.regions.viewports.TestCase24_25_26_27_28_29VerifyRegisterUserIsAbleToShopAndCheckOutUsingCreditCards"/> -->
+                 <class name="com.coach.tests.regions.viewports.Verify_404_Page"/>
+
+<!--             Region neutral mobile Viewport tests -->
+                 <class name="com.coach.tests.regions.uk.viewports.VerifyMobile_SortByUKFunctionality"/>
+
+<!--             <class name="com.coach.tests.regions.viewports.mobile.TestCase01_02_03_04_05_07_18_39And40Mobile_VerifyUserIsAbleToRegisterAndLoginIntoCoach" />  -->
+                <class name="com.coach.tests.regions.viewports.mobile.TestCase19Mobile_VerifyHeaderMenuLinksAndClickOnThem" />
+                <class name="com.coach.tests.regions.viewports.mobile.TestCase22Mobile_VerifyStaticPagesInFooterLinks"/>
+                <class name="com.coach.tests.regions.viewports.mobile.TestCase33Mobile_VerifyStoreLocatorAndSetAsFavouriteStore"/>
+                <class name="com.coach.tests.regions.viewports.mobile.TestCase41Mobile_VerifyContactUsFuntionalityPresentInFooterLinks"/>
+                <class name="com.coach.tests.regions.viewports.mobile.TestCase37Mobile_VerifyUserCanMoveProductToWishlist"/>
+<!--            <class name="com.coach.tests.regions.viewports.mobile.TestCase51Mobile_VerifyUserIsAbleToCheckDetailsInCartPage"/> -->
+            
+        </classes>
+    </test>
+</suite>

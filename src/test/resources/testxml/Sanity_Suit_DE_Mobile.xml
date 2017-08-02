@@ -1,0 +1,50 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Coach Automation Regression Tests Suite" preserve-order="true" parallel="classes" thread-count="1">
+    <test name="Sanity Suit - DE - Mobile">
+        <parameter name="locale" value="DE"/>
+        <groups>
+            <run>
+                <include name="mobile"></include>
+            </run>
+        </groups>           
+        <classes>    
+        
+                  <class name="com.coach.tests.regions.viewports.desktop.TestCase33_VerifyStoreLocatorAndSetAsFavouriteStore"/>
+                  <class name="com.coach.tests.regions.viewports.desktop.TestCase01_02_03_04_05_07_18_39And40_VerifyUserIsAbleToRegisterAndLoginIntoCoach"/>
+                  <class name="com.coach.tests.regions.viewports.desktop.TestCase22_VerifyStaticPagesInFooterLinks"/>
+                  <class name="com.coach.tests.regions.viewports.desktop.TestCase51_VerifyUserIsAbleToCheckDetailsInCartPage"/>
+                  <!--  <class name="com.coach.tests.regions.viewports.desktop.Verify_FilterContainer"/> -->
+                  <class name="com.coach.tests.regions.viewports.desktop.Verify_EasyTrackOrdersUnderCreateAnAccountAndBillingInformationStatementIsRemoved"/>
+                  <class name="com.coach.tests.regions.viewports.desktop.Verify_MultipleColorVarientsAreNotPresentInAddAMonogramWindow"/>
+                  
+                  <class name="com.coach.tests.regions.viewports.SRCH_1"/>
+                  <class name="com.coach.tests.regions.viewports.TestCase37_VerifyUserCanMoveProductToWishlist"/>
+                  <class name="com.coach.tests.regions.viewports.TestCase21_34_35_36And38_VerifyUserIsAbleToCheckProductResultAndProductDetailPage"/>
+                  <class name="com.coach.tests.regions.viewports.TestCase06_08_09And43_VerifyUserAddProductToBagAndRemoveProductFromBag"/>
+                  <class name="com.coach.tests.regions.viewports.Verify_MonogrammingPageAndShoppingBagForMonogramming"/>
+                  <class name="com.coach.tests.regions.viewports.Verify_SendToAFriendLinkInWishList"/>
+                  <class name="com.coach.tests.regions.viewports.Verify_GuestUser_SaveThisCC_BelowCreateAnAccountInPaymentPageAndWhatIsThisIconInPaymentPage"/>
+
+                  <class name="com.coach.tests.regions.us.viewports.desktop.TestCase31_VerifyGuestUserIsAbleToShopAndCheckoutUsingCreditcard"/>
+                  <class name="com.coach.tests.regions.us.viewports.desktop.RG_SI_2"/>
+                                 
+                  <class name="com.coach.tests.regions.uk.viewports.desktop.VerifyGiftCardPaymentMethodIsNotDisplaedOnBillingPage"/>
+                  <class name="com.coach.tests.regions.uk.viewports.desktop.Verify_OptInCheckBoxIsDefaultSelected"/>
+                  <class name="com.coach.tests.regions.uk.viewports.desktop.TestCase45QuickShopCheckout"/>
+                                    
+                  <class name="com.coach.tests.regions.us.viewports.TestCase30_VerifyRegisterUserIsAbleToShopAndCheckOutUsingCreditCard"/>
+                  <class name="com.coach.tests.regions.us.viewports.TestCase52_53_54_VerifyUserCanAddEditMonogram"/>
+                  
+                  <class name="com.coach.tests.regions.uk.viewports.VerifySortByFunctionalityUKFilters"/>
+                  <class name="com.coach.tests.regions.uk.viewports.TestCase11_12_13_14_15_And_16_VerifyGuestUserIsAbleToShopAndCheckoutUsingMaestro19Card"/>
+                  
+                  <class name="com.coach.tests.regions.viewports.mobile.TestCase37Mobile_VerifyUserCanMoveProductToWishlist"/>
+                  <class name="com.coach.tests.regions.viewports.mobile.Verify_MoreButtonIsPresentAtTheEndOfPage"/>
+           
+         </classes>
+    </test>
+</suite>
+        
+        
+        
+        

@@ -1,0 +1,10 @@
+/target/
+test-output
+.classpath
+/.settings/
+.project
+src\test\resources\testdata\Data.properties
+
+
+
+src/test/resources/testdata/Data.properties
