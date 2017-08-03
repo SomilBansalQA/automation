@@ -1,18 +1,31 @@
 package com.coach.keywords;
 
-import java.util.Map;
+import java.io.File;
+import java.io.IOException;
+import java.util.Date;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.qait.automation.getpageobjects.GetPage;
 import com.qait.automation.utils.ConfigPropertyReader;
 
+import jxl.Workbook;
+import jxl.read.biff.BiffException;
+import jxl.write.Label;
+import jxl.write.WritableSheet;
+import jxl.write.WritableWorkbook;
+import jxl.write.WriteException;
+
+
 public class GiftCard extends GetPage {
 	
 	WebDriver driver;
+	 String EXCEL_FILE_LOCATION = "C:\\Users\\somilbansal\\Desktop\\Coach_Gift_Card_Balance_Details_at_particular_time.xls";
+    WritableWorkbook myFirstWbook = null;
+    static int index=0;
+    
 	public GiftCard(WebDriver driver)
 	{
 		super(driver,"coach/GiftCard");
@@ -71,7 +84,7 @@ public class GiftCard extends GetPage {
 		handle_DontMissOutWindow();
 		scrollDown(element("link_purchase_giftcard"));
 		click(element("link_purchase_giftcard"));
-		msg.log("Clicked on purchase gift cards");
+		msg.log("Clicked on purchase g	ift cards");
 		hardWait(3);
 		sendText(element("field_giftcard_amount"), "100");
 		click(element("btn_gift_add_to_bag"));
@@ -84,7 +97,110 @@ public class GiftCard extends GetPage {
 	}
 
 	
+	public WritableSheet createExcelSheet(){
+		WritableSheet excelSheet = null;
+		Label label=null;
+        try {
+            myFirstWbook = Workbook.createWorkbook(new File(EXCEL_FILE_LOCATION));
+           excelSheet = myFirstWbook.createSheet("Sheet 1", 0);
+           excelSheet.setColumnView(0,50);
+           excelSheet.setColumnView(1,25);
+           excelSheet.setColumnView(2,10);
+           excelSheet.setColumnView(3,100);
+           label = new Label(0, 0, "Coach_Gift_Card_Balance_Details");
+           excelSheet.addCell(label);
+          
+           label = new Label(0, 1, "Time");
+           excelSheet.addCell(label); 
+           label = new Label(1, 1, "gift_card_number");
+           excelSheet.addCell(label);
+           label = new Label(2, 1, "pin_number");
+           excelSheet.addCell(label);
+           label = new Label(3, 1, "gift_card_balance");
+           excelSheet.addCell(label);
+
+           myFirstWbook.write();    
+	  } catch (IOException e) {
+          e.printStackTrace();
+      } catch (WriteException e) {
+          e.printStackTrace();
+      }finally {
+
+	        if (myFirstWbook != null) {
+	            try {
+	                myFirstWbook.close();
+	            } catch (IOException e) {
+	                e.printStackTrace();
+	            } catch (WriteException e) {
+	                e.printStackTrace();
+	            }
+	        }
+	        
+	    }
+        return excelSheet;
+	}
+	  
+	
+	public WritableSheet modifyingExcelSheet(String giftcardNumber,String pinNumber,String gift_card_balance){
+		WritableSheet excelSheet = null;
+		  
+			 
+		      try {
+		    	  Workbook workbook1 = Workbook.getWorkbook(new File(EXCEL_FILE_LOCATION));
+				myFirstWbook = Workbook.createWorkbook(new File(EXCEL_FILE_LOCATION), workbook1);
+			} catch (IOException e) {
+				e.printStackTrace();
+			} catch (BiffException e) {
+			
+				e.printStackTrace();
+			}
+		      excelSheet = myFirstWbook.getSheet(0);
+		 
+		      
+		      index=excelSheet.getRows();
+		      try{		
+					
+			    	Label label;
+			    	label = new Label(0,index, String.valueOf(new Date()));
+			        excelSheet.addCell(label);
+			        label = new Label(1, index, giftcardNumber);
+			        excelSheet.addCell(label);
+			        label = new Label(2, index, pinNumber);
+			        excelSheet.addCell(label);
+			        label = new Label(3, index, gift_card_balance);
+			        excelSheet.addCell(label);
+			        
+			        myFirstWbook.write();
+			        index++;
+			   } catch (IOException e) {
+			       e.printStackTrace();
+			   } catch (WriteException e) {
+			       e.printStackTrace();
+			   } 
+			    finally {
+
+			        if (myFirstWbook != null) {
+			            try {
+			                myFirstWbook.close();
+			            } catch (IOException e) {
+			                e.printStackTrace();
+			            } catch (WriteException e) {
+			                e.printStackTrace();
+			            }
+			        }
+			        
+			    }
+			
+				
+        return excelSheet;
+	}
+	
+	
+	
+	
+
    public void CheckYourBalance(String giftcardNumber,String pinNumber){
+     
 	   wait.waitForPageToLoadCompletely();
 		if((ConfigPropertyReader.getProperty("browser").equals("safari"))||(ConfigPropertyReader.getProperty("browser").startsWith("ios"))){
 			hardWait(3);
@@ -104,6 +220,14 @@ public class GiftCard extends GetPage {
 		msg.log("Clicked on submit button");
 		String gift_card_balance=getText(By.xpath(".//div[@class='row balance-row']/span"));
 		msg.log(gift_card_balance);
+		
+		WritableSheet excelSheet;
+			if(!new File(EXCEL_FILE_LOCATION).exists()){
+		excelSheet=createExcelSheet();	
+		}
+		else{excelSheet=modifyingExcelSheet(giftcardNumber,pinNumber,gift_card_balance);
+		}         
+
 		executeJavascript("document.querySelector('button[class=\"icon-coach-close-black\"]').click()");
 		hardWait(3);
 	  }
